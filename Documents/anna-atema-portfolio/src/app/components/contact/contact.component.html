@@ -1,0 +1,36 @@
+<div class="contact">
+  <h1 class="center contact-text">Send me an email</h1>
+  <div class="contact-form-wrapper">
+    <form (ngSubmit)="send()" [formGroup]="form" class="form">
+      <div class="form-row">
+        <div class="form-group">
+          <input formControlName="from_name" id="name" type="text" placeholder="Name">
+          <div *ngIf="form.controls.from_name.invalid && form.controls.from_name.touched" class="error-message">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <input formControlName="from_email" id="email" type="email" placeholder="Email">
+          <div *ngIf="form.controls.from_email.invalid && form.controls.from_email.touched" class="error-message">
+            A valid email is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <input formControlName="from_telephone" id="telephone" type="text" placeholder="Phone">
+        </div>
+        <div class="form-group">
+          <textarea formControlName="message" id="message" placeholder="Message"></textarea>
+          <div *ngIf="form.controls.message.invalid && form.controls.message.touched" class="error-message">
+            Message is required.
+          </div>
+        </div>
+      </div>
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+      <button type="submit" class="submit-button mt-40" #buttonElement>
+        Send
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin:0px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@font-face {
+  font-family: 'ITC Eras Std Bold';
+  src: url('/assets/fonts/Eras-Bold-ITC_15884.ttf') format('truetype');
+}
+html, body {
+  height: 100%;
+  margin: 0px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  background: #DCDCD5;
+}
+
+$max: 50;
+$offset: 5;
+$unit: 'px'; // Feel free to change the unit.
+
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+// Margins
+@include list-loop('.mt-', 'margin-top');
+@include list-loop('.mr-', 'margin-right');
+@include list-loop('.mb-', 'margin-bottom');
+@include list-loop('.ml-', 'margin-left');
+@include list-loop('.m-', 'margin');
+
+// Paddings
+@include list-loop('.pt-', 'padding-top');
+@include list-loop('.pr-', 'padding-right');
+@include list-loop('.pb-', 'padding-bottom');
+@include list-loop('.pl-', 'padding-left');
+@include list-loop('.p-', 'padding') ;
+
+
+.text-white {
+  color:#ffff !important;
+}
+.space-between {
+  justify-content: space-between !important;
+}

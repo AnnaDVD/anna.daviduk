@@ -1,0 +1,43 @@
+.header, .navbar a, .home, .home-content, .home-content h3, .home-content h1, .home-content p, .home-img img, .social-media a, .btn {
+  opacity: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.logo {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+  text-decoration: none;
+}
+
+.navbar a {
+  display: inline-flex;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: color 0.4s;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i) + 0.5s);
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #FEE715;
+}
